@@ -1,0 +1,12 @@
+<resources>
+    <string name="application.name">Paho Test</string>
+
+    <string name="btn.create">Create</string>
+    <string name="btn.connect">Connect</string>
+    <string name="btn.disconnect">Disconnect</string>
+    <string name="btn.publish">Publish</string>
+    <string name="btn.retain">Retain</string>
+    <string name="btn.remove">Remove</string>
+    <string name="btn.subscribe">Subscribe</string>
+    <string name="btn.unsubscribe">Unsubscribe</string>
+</resources>
