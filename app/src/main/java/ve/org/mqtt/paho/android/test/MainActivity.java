@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
     // MQTT Methods ...
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    protected void create(View view) {
+    public void create(View view) {
 
         final String clientId = DEFAULT_CLIENT_ID;
 
@@ -157,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    protected void connect(View v) {
+    public void connect(View v) {
         trace("Connect... ");
         if (!client.isConnected())
             try {
@@ -180,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
             }
     }
 
-    protected void disconnect(View v) {
+    public void disconnect(View v) {
         if (client.isConnected())
             try {
                 client.disconnect()
@@ -200,7 +200,7 @@ public class MainActivity extends AppCompatActivity {
             }
     }
 
-    protected void publish(View v) {
+    public void publish(View v) {
         if (client.isConnected())
             try {
                 IMqttDeliveryToken token = client.publish("topic", new MqttMessage("payload".getBytes("UTF-8")));
@@ -221,7 +221,7 @@ public class MainActivity extends AppCompatActivity {
             }
     }
 
-    protected void subscribe(View v) {
+    public void subscribe(View v) {
         if (client.isConnected())
             try {
                 final IMqttToken subToken = client.subscribe("retained", 1 /* qos */);
@@ -242,7 +242,7 @@ public class MainActivity extends AppCompatActivity {
             }
     }
 
-    protected void unsubscribe(View v) {
+    public void unsubscribe(View v) {
         if (client.isConnected())
             try {
                 client.unsubscribe("retained").setActionCallback(new IMqttActionListener() {
@@ -262,7 +262,7 @@ public class MainActivity extends AppCompatActivity {
             }
     }
 
-    protected void retain(View v) {
+    public void retain(View v) {
         if (client.isConnected())
             try {
                 client.publish("retained", "payload".getBytes("UTF-8"), 0 /* qos */, true /* retained*/)
@@ -283,7 +283,7 @@ public class MainActivity extends AppCompatActivity {
             }
     }
 
-    protected void remove(View v) {
+    public void remove(View v) {
         if (client.isConnected())
             try {
                 MqttMessage payloadRetained = new MqttMessage();
